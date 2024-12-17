@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.trackingtv.R;
+import com.squareup.picasso.Picasso;
 
 public class SeriesDescription extends AppCompatActivity {
 
@@ -38,17 +41,23 @@ public class SeriesDescription extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        String title = getIntent().getStringExtra("title");
-//        int img = getIntent().getIntExtra("img", 0);
-//
-//        TextView textView = findViewById(R.id.title);
-////        textView.setText(title);
-//
-//        ImageView imageView = findViewById(R.id.thumbnail);
-//        if (img != 0) {
-//            imageView.setImageResource(img);
+        String name = getIntent().getStringExtra("name");
+        String summary = getIntent().getStringExtra("summary");
+        String genre = getIntent().getStringExtra("genre");
+        String imageUrl = getIntent().getStringExtra("image");
 
-//
-//        }
+        TextView descriptionNameTV = findViewById(R.id.descriptionNameTV);
+        TextView descriptionSummaryTV = findViewById(R.id.descriptionSummaryTV);
+        TextView descriptionGenreTV = findViewById(R.id.descriptionGenresTV);
+        ImageView descriptionImageIV = findViewById(R.id.descriptionImageIV);
+        descriptionNameTV.setText(name);
+        descriptionSummaryTV.setText(summary);
+        descriptionGenreTV.setText(genre);
+
+        Picasso.get()
+                .load(imageUrl)
+                .placeholder(R.drawable.baseline_downloading_24) // Optional placeholder
+                .error(R.drawable.baseline_error_24)           // Optional error fallback
+                .into(descriptionImageIV);
     }
 }

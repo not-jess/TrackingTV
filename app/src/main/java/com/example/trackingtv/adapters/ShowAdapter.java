@@ -17,6 +17,7 @@ import com.example.trackingtv.models.ShowData;
 import com.example.trackingtv.ui.SeriesDescription;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowHolder> {
@@ -55,8 +56,18 @@ public class ShowAdapter extends RecyclerView.Adapter<ShowAdapter.ShowHolder> {
             public void onClick(View view) {
                 Intent moveIntent = new Intent(activityContext, SeriesDescription.class);
                 moveIntent.putExtra("name", show.getName());
-                moveIntent.putExtra("image", show.getImageUrl());
                 moveIntent.putExtra("summary", show.getSummary());
+                ArrayList<String> genres = new ArrayList<>();
+                genres = show.getGenres();
+                String genreString = "";
+                for (int i = 0; i < genres.size(); i++) {
+                    genreString += genres.get(i);
+                    if (i != genres.size() - 1) {
+                        genreString += ", ";
+                    }
+                }
+                moveIntent.putExtra("genres", genreString);
+                moveIntent.putExtra("image", show.getImageUrl());
 
                 activityContext.startActivity(moveIntent);
             }

@@ -71,8 +71,18 @@ public class TrendingShowAdapter extends RecyclerView.Adapter<TrendingShowAdapte
             public void onClick(View view) {
                 Intent moveIntent = new Intent(activityContext, SeriesDescription.class);
                 moveIntent.putExtra("name", show.getName());
-                moveIntent.putExtra("image", show.getImageUrl());
                 moveIntent.putExtra("summary", show.getSummary());
+                ArrayList<String> genres = new ArrayList<>();
+                genres = show.getGenres();
+                String genreString = "";
+                for (int i = 0; i < genres.size(); i++) {
+                    genreString += genres.get(i);
+                    if (i != genres.size() - 1) {
+                        genreString += ", ";
+                    }
+                }
+                moveIntent.putExtra("genre", genreString);
+                moveIntent.putExtra("image", show.getImageUrl());
 
                 activityContext.startActivity(moveIntent);
             }
