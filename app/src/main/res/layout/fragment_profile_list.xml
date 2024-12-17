@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9BBBEC"
+    tools:context=".ui.ProfileListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Watching" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerViewWatching"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Completed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerViewCompleted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

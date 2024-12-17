@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfilePage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81B3FD"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/drawableperson"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/person" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop= "27dp"
+                android:text="user1"
+                android:id="@+id/Userlbl"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#475467"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/squarebutton"
+                android:id="@+id/overviewbtn"
+                android:text="Overview"
+            />
+
+        <Button
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:background="@drawable/squarebutton"
+            android:id="@+id/listbtn"
+            android:text="list"
+        />
+
+        </LinearLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.myapplication.ui.OverviewFragment"
+            android:layout_width="match_parent"
+            android:layout_height="622dp" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
