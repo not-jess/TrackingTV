@@ -11,6 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="8dp"
         android:text="Currently Watching"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -23,6 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="8dp"
         android:text="Trending"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -38,6 +40,7 @@
         android:id="@+id/toUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile" />
+        android:text="Profile"
+        app:cornerRadius="0dp" />
 
 </LinearLayout>

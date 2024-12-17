@@ -16,36 +16,34 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/TotalWatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total Show : "
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/TotalWatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Shows : "
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="int"
-        android:id="@+id/totalshowwatched"
-        android:textSize="18sp"
-        />
+            <TextView
+                android:id="@+id/totalshowwatched"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/FirstJoin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Join : "
-        android:paddingLeft="50dp"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/FirstJoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="Member since : "
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="date"
-        android:id="@+id/firstjoindate"
-        android:textSize="18sp"
-        />
+            <TextView
+                android:id="@+id/firstjoindate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/12/2024"
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -53,8 +51,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activity"
-            android:textSize="30sp"/>
+            android:text="Recent Activity"
+            android:textSize="30sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/OverviewRV"

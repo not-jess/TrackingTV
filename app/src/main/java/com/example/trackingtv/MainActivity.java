@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.flFragment, new RegisterFragment())
+                .replace(R.id.flFragment, new LoginFragment())
                 .setReorderingAllowed(true)
-                .addToBackStack("register")
+                .addToBackStack("login")
                 .commit();
 
         Button toRegisterBtn = findViewById(R.id.toRegisterBtn);
