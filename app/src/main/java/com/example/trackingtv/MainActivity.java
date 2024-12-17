@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.flFragment, new RegisterFragment())
+                .setReorderingAllowed(true)
+                .addToBackStack("register")
+                .commit();
 
         Button toRegisterBtn = findViewById(R.id.toRegisterBtn);
         toRegisterBtn.setOnClickListener(new View.OnClickListener() {
