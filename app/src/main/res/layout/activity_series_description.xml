@@ -10,7 +10,7 @@
 
 
         <ImageView
-            android:id="@+id/thumbnail"
+            android:id="@+id/descriptionImageIV"
             android:layout_width="229dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -21,7 +21,7 @@
             tools:layout_editor_absoluteY="30dp" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/descriptionNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -30,9 +30,17 @@
             android:textSize="48sp"
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="181dp" />
+        <TextView
+            android:id="@+id/descriptionGenresTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Romcom, Fantasy"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/descriptionSummaryTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"

@@ -77,6 +77,11 @@
             android:hint="Confirm Password"
             android:inputType="textPassword" />
 
+        <TextView
+            android:id="@+id/ErrorLbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""/>
 
         <Button
             android:id="@+id/RegisBtn"

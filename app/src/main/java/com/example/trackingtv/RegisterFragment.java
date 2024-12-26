@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.trackingtv.controllers.UserController;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +63,9 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        UserController userController = new UserController();
+
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_register, container, false);
         EditText username = rootView.findViewById(R.id.editTextTextUsername);
@@ -67,6 +73,7 @@ public class RegisterFragment extends Fragment {
         EditText password = rootView.findViewById(R.id.editTextTextPassword);
         EditText conpassword = rootView.findViewById(R.id.editTextTextConfirmPassword);
 
+        TextView error = rootView.findViewById(R.id.ErrorLbl);
 
         Button regisbtn = rootView.findViewById(R.id.RegisBtn);
         regisbtn.setOnClickListener(new View.OnClickListener() {
@@ -76,9 +83,28 @@ public class RegisterFragment extends Fragment {
                 String Email = email.getText().toString();
                 String Password = password.getText().toString();
                 String ConPassword = conpassword.getText().toString();
+
+                String validate = validateUser(Username, Email, Password, ConPassword);
+
+                if(!validate.equals("Success")) {
+                    error.setText(validate);
+                    return;
+                }
+
+                userController.registerUser(Username, Email, Password, getContext());
             };
 
         });
         return rootView;
+    }
+
+    private String validateUser(String Username, String Email, String Password, String ConPassword) {
+        if (Username.isEmpty() || Email.isEmpty() || Password.isEmpty() || ConPassword.isEmpty()) {
+            return "Please fill in all fields";
+        } else if (!Password.equals(ConPassword)) {
+            return "Passwords do not match";
+        } else {
+            return "Success";
+        }
     }
 }

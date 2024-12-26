@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "646172247909",
+    "firebase_url": "https://trackingtv-d3ed0-default-rtdb.firebaseio.com",
+    "project_id": "trackingtv-d3ed0",
+    "storage_bucket": "trackingtv-d3ed0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646172247909:android:40859d7cbbfd861ead038c",
+        "android_client_info": {
+          "package_name": "com.example.trackingtv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnRBIChLGeb3eM5loFooFa_xBequXE8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

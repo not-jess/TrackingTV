@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.trackingtv.controllers.UserController;
 import com.example.trackingtv.ui.HomePage;
 
 
@@ -63,22 +64,21 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        UserController userController = new UserController();
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-        EditText username = rootView.findViewById(R.id.editTextTextUsername);
-
-
-        EditText password = rootView.findViewById(R.id.editTextTextPassword);
+        EditText usernameET = rootView.findViewById(R.id.editTextTextUsername);
+        EditText passwordET = rootView.findViewById(R.id.editTextTextPassword);
 
 
         Button loginbtn = rootView.findViewById(R.id.LoginBtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(getActivity(), HomePage.class);
-                startActivity(intent);
+                String name = usernameET.getText().toString();
+                String password = passwordET.getText().toString();
 
+                userController.loginUser(name, password, getContext());
         };
 
     });
