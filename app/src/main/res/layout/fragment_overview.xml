@@ -30,21 +30,6 @@
                 android:text="0"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/FirstJoin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="50dp"
-                android:text="Member since : "
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/firstjoindate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12/12/2024"
-                android:textSize="16sp" />
-
 
         </LinearLayout>
 
