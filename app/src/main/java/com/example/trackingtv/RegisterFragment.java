@@ -9,55 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.trackingtv.controllers.UserController;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RegisterFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class RegisterFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public RegisterFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegisterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RegisterFragment newInstance(String param1, String param2) {
-        RegisterFragment fragment = new RegisterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -68,15 +27,13 @@ public class RegisterFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_register, container, false);
-        EditText username = rootView.findViewById(R.id.editTextTextUsername);
+        EditText username = rootView.findViewById(R.id.loginEmailET);
         EditText email = rootView.findViewById(R.id.editTextTextEmail);
-        EditText password = rootView.findViewById(R.id.editTextTextPassword);
+        EditText password = rootView.findViewById(R.id.loginPasswordET);
         EditText conpassword = rootView.findViewById(R.id.editTextTextConfirmPassword);
 
-        TextView error = rootView.findViewById(R.id.ErrorLbl);
-
-        Button regisbtn = rootView.findViewById(R.id.RegisBtn);
-        regisbtn.setOnClickListener(new View.OnClickListener() {
+        Button regisBtn = rootView.findViewById(R.id.RegisBtn);
+        regisBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String Username = username.getText().toString();
@@ -84,27 +41,26 @@ public class RegisterFragment extends Fragment {
                 String Password = password.getText().toString();
                 String ConPassword = conpassword.getText().toString();
 
-                String validate = validateUser(Username, Email, Password, ConPassword);
-
-                if(!validate.equals("Success")) {
-                    error.setText(validate);
+                if (!isValid(Username, Email, Password, ConPassword)) {
                     return;
                 }
 
                 userController.registerUser(Username, Email, Password, getContext());
-            };
+            }
 
         });
         return rootView;
     }
 
-    private String validateUser(String Username, String Email, String Password, String ConPassword) {
+    private boolean isValid(String Username, String Email, String Password, String ConPassword) {
         if (Username.isEmpty() || Email.isEmpty() || Password.isEmpty() || ConPassword.isEmpty()) {
-            return "Please fill in all fields";
+            Toast.makeText(getContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show();
+            return false;
         } else if (!Password.equals(ConPassword)) {
-            return "Passwords do not match";
+            Toast.makeText(getContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+            return false;
         } else {
-            return "Success";
+            return true;
         }
     }
 }

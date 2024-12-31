@@ -30,11 +30,20 @@
 
             <TextView
                 android:id="@+id/Userlbl"
-                android:layout_width="match_parent"
+                android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:paddingTop="27dp"
                 android:text="Absolute Cinephile"
                 android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profileLogoutTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Logout"
+                android:textColor="#FF0000"
                 android:textStyle="bold" />
 
         </LinearLayout>

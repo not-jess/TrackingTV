@@ -16,7 +16,7 @@
 
 
         <TextView
-            android:id="@+id/Title"
+            android:id="@+id/loginTitleTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -24,13 +24,13 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/UsernameLbl"
+            android:id="@+id/loginEmailTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter Username" />
 
         <EditText
-            android:id="@+id/editTextTextUsername"
+            android:id="@+id/loginEmailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -50,13 +50,13 @@
             android:hint="Email" />
 
         <TextView
-            android:id="@+id/PasswordLbl"
+            android:id="@+id/loginPasswordTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter Password" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/loginPasswordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -76,12 +76,6 @@
             android:ems="10"
             android:hint="Confirm Password"
             android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/ErrorLbl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
 
         <Button
             android:id="@+id/RegisBtn"

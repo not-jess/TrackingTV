@@ -1,9 +1,11 @@
 package com.example.trackingtv;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.trackingtv.ui.HomePage;
+
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences userPrefData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        FrameLayout frameLayout;
+
+        userPrefData = getSharedPreferences("user_preferences", Context.MODE_PRIVATE);
+        checkLogin();
+
         Button toLoginBtn = findViewById(R.id.toLoginBtn);
         toLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +68,14 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             }
         });
+    }
 
-
+    private void checkLogin() {
+        boolean isRemember = userPrefData.getBoolean("user_remember", false);
+        if (isRemember) {
+            Intent toHome = new Intent(MainActivity.this, HomePage.class);
+            startActivity(toHome);
+        }
     }
 }
 

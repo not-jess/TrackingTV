@@ -15,7 +15,7 @@
 
 
         <TextView
-            android:id="@+id/Title"
+            android:id="@+id/loginTitleTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -23,43 +23,40 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/UsernameLbl"
+            android:id="@+id/loginEmailTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Username" />
+            android:text="Enter Email" />
 
         <EditText
-            android:id="@+id/editTextTextUsername"
+            android:id="@+id/loginEmailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Username" />
+            android:hint="Email" />
 
         <TextView
-            android:id="@+id/PasswordLbl"
+            android:id="@+id/loginPasswordTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter Password" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/loginPasswordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword" />
 
-        <TextView
-            android:id="@+id/ForgetPasswordBtn"
-            android:layout_width="wrap_content"
+        <CheckBox
+            android:id="@+id/loginRememberCB"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="Forgot Password ? " />
+            android:text="Remember Me" />
 
         <Button
-            android:id="@+id/LoginBtn"
+            android:id="@+id/loginSubmitBtn"
             android:layout_width="150sp"
             android:layout_height="60dp"
             android:layout_gravity="center"
